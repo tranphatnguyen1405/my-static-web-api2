@@ -31,7 +31,10 @@ export default new Router({
     },
     {
       path: '*',
-      component: PageNotFound,
+      component: () =>
+        import(
+          /* webpackChunkName: "products" */ './views/products/products.vue'
+        ),
     },
   ],
 });
